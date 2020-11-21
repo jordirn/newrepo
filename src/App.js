@@ -1,24 +1,35 @@
+import React from "react";
 import logo from './logo.svg';
 import './App.css';
+import ListTiketSpv from './pages/listtiketspv.js';
+import LihatTiket from './pages/lihattiket.js'
+import ListAkunCs from './pages/listakuncs.js'
+import Login from './pages/login.js'
 
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
   return (
+    <Router>
+        <Switch>
+        <Route exact path="/" component={Login} />
+        <Route path="/listtiketspv" component={ListTiketSpv} />
+        <Route path="/listakuncs" component={ListAkunCs} />
+        <Route path="/lihattiket" component={LihatTiket} />
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+      <footer className="page-footer font-small blue">
+          <div className="footer-copyright text-center py-3">
+            Copyright © FE-BE 07 2020 
+          </div>
+      </footer>
     </div>
+        
+    
+      {/* <LihatTiket/> */}
+      {/* <ListTiketSpv/> */}
+      {/* <ListAkunCs/> */}
+    </Switch>
+    </Router>
   );
 }
 
